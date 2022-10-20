@@ -1,3 +1,20 @@
+const STATIC_STRING = {
+    "ADDR_STRING": "3rd Floor, Fortaleza Complex, Central Ave, above NM Medical, Prathamesh Society, Kalyani Nagar",
+    "TELE_STRING": "1234567890",
+    "EMAIL_STRING": "hr@asrmedia.co.in",
+    "COMP_STRING": "Asr Media and Marketing Pvt."
+}
+const fieldsList = "c_addr,c_tele,c_email,c_comp"
+
+
+const addDynamicText = (fieldname , field ) => {
+    let elems  = document.getElementsByClassName(fieldname) 
+    for(elem of elems){
+      elem.textContent = STATIC_STRING[field];
+    }
+    }
+
+
 (function ($) {
     "use strict";
     
@@ -16,6 +33,10 @@
         }
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
+
+        fieldsList.split(',').forEach( elem  => {
+            addDynamicText(elem, elem.replace("c_","").toUpperCase()+"_STRING")
+        })
     });
     
     
