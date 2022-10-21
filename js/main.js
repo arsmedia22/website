@@ -1,5 +1,5 @@
 const STATIC_STRING = {
-    "ADDR_STRING": "3rd Floor, Fortaleza Complex, Central Ave, above NM Medical, Prathamesh Society, Kalyani Nagar",
+    "ADDR_STRING": "3rd Floor, Fortaleza Complex, Central Ave, above NM Medical, Prathamesh Society, Kalyani Nagar, Pune",
     "TELE_STRING": "1234567890",
     "EMAIL_STRING": "hr@asrmedia.co.in",
     "COMP_STRING": "Asr Media and Marketing Pvt."
@@ -36,6 +36,18 @@ const addDynamicText = (fieldname , field ) => {
 
         fieldsList.split(',').forEach( elem  => {
             addDynamicText(elem, elem.replace("c_","").toUpperCase()+"_STRING")
+        })
+
+        $("#sendHireEmail").on('click', function(){
+            let name =  $("#name").val() 
+            let email = $("#email").val()
+            let phn  = $("#phn").val()
+            let edu = $("#edu").val()
+            let wswhu  = $("#wswhu").val();
+
+            let email_string = `?subject=Candidate Notification [${name}]&body=name : ${name} \nemail : ${email} \nphone : ${phn} \neducation : ${edu} \ncover letter : ${wswhu} \n `
+            console.log(email_string)
+            location.href="mailto:hr@asrmedia.co.in"+email_string
         })
     });
     
