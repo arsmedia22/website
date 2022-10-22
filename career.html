@@ -67,17 +67,18 @@
         <div class="col-lg-6 col-md-8 col-sm-10 px-0">
             <div class="contact-form bg-white rounded p-5">
                 <div id="success"></div>
-               
+               <form id="cvSendForm" action="https://mailthis.to/hr@asrmedia.co.in"
+               method="POST" encType="multipart/form-data">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="control-group">
-                                <input type="text" class="form-control bg-light border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control bg-light border-0 p-4" name="name" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="control-group">
-                                <input type="email" class="form-control bg-light border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control bg-light border-0 p-4" name="email" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -85,23 +86,28 @@
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="control-group">
-                                <input type="tel" class="form-control bg-light border-0 p-4" id="phn" placeholder="Your Contact No." required data-validation-required-message="please enter your phone number">
+                                <input type="tel" class="form-control bg-light border-0 p-4" name="contact" id="phn" placeholder="Your Contact No." required data-validation-required-message="please enter your phone number">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control bg-light border-0 p-4" id="edu" placeholder="Highest Education" required="required" data-validation-required-message="Highest Education" />
+                        <input type="text" class="form-control bg-light border-0 p-4" name="education" id="edu" placeholder="Highest Education" required="required" data-validation-required-message="Highest Education" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <textarea class="form-control bg-light border-0 py-3 px-4" rows="5" id="wswhu" placeholder="Why should we hire you?" ></textarea>
+                        <input type="file" class="form-control bg-light border-0 py-3 px-4" rows="5" name="cv" id="wswhu" placeholder="Atach your CV" ></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
+                    <input type="hidden" name="_subject" value="Contact form submitted">
+   
+                    <input type="hidden" name="_after" value="./index.html">
+                    <input type="hidden" name="_honeypot" value="">
+
                     <div class="text-center">
-                        <button class="btn btn-primary text-uppercase py-3 px-5" id="sendHireEmail">Send to HR</button>
+                        <button class="btn btn-primary text-uppercase py-3 px-5" type="submit" onclick="window.location.href='index.html'">Send to HR</button>
                     </div>
-              
+              </form>
             </div>
         </div>
     </div>
