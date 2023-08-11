@@ -47,7 +47,7 @@ const addDynamicText = (fieldname , field ) => {
 
             let email_string = `?subject=Candidate Notification [${name}]&body=name : ${name} \nemail : ${email} \nphone : ${phn} \neducation : ${edu} \ncover letter : ${wswhu} \n `
             console.log(email_string)
-            location.href="mailto:hr@asrmedia.co.in"+email_string
+            location.href="mailto:hr@arsmedia.co.in"+email_string
         })
     });
     
